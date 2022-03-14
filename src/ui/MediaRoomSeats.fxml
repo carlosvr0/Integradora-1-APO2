@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MediaRoomController">
+   <top>
+      <Pane prefHeight="50.0" prefWidth="609.0" style="-fx-background-color: #1F618D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="217.0" layoutY="10.0" text="Media room SEATS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="611.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="30.0" layoutY="14.0" prefHeight="9.0" prefWidth="550.0" style="-fx-background-radius: 50; -fx-background-color: #34495E;" />
+            <Label layoutX="276.0" layoutY="29.0" text="PANTALLA" textFill="#99a3a4" />
+            <Pane fx:id="buttonPane" layoutX="25.0" layoutY="46.0" prefHeight="354.0" prefWidth="555.0" />
+            <GridPane fx:id="grid" layoutX="45.0" layoutY="65.0" prefHeight="314.0" prefWidth="551.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnJoker" mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="01" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="00" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="10" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="20" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="01" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="50" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="40" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="30" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="41" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="31" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="21" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="22" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="12" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="02" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="51" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="03" GridPane.columnIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="52" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="42" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="32" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="53" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="43" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="33" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="23" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="13" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="34" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="24" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="14" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="04" GridPane.columnIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="15" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="05" GridPane.columnIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="54" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="44" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="06" GridPane.columnIndex="6" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="55" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="45" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="35" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="25" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="36" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="26" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="16" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="56" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#setSeat" prefHeight="47.0" prefWidth="48.0" style="-fx-background-radius: 15000;" text="46" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <Button layoutX="71.0" layoutY="408.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 150;" />
+            <Button layoutX="207.0" layoutY="408.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 150; -fx-background-color: #1A5276;" />
+            <Label layoutX="104.0" layoutY="412.0" text="Disponibles" />
+            <Button layoutX="426.0" layoutY="408.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 150; -fx-background-color: #F39C12;" />
+            <Label layoutX="242.0" layoutY="412.0" text="No disponible / otra localidad" />
+            <Label layoutX="459.0" layoutY="412.0" text="Silla seleccionada" />
+            <Button fx:id="btnReservarSelectedSeat" layoutX="344.0" layoutY="466.0" mnemonicParsing="false" onAction="#assignSeat" style="-fx-background-color: #229954;" text="Reservar asiento" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCancel" layoutX="125.0" layoutY="466.0" mnemonicParsing="false" onAction="#cancelSelection" style="-fx-background-color: #E74C3C;" text="Quitar selección" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
