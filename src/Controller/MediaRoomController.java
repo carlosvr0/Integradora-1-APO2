@@ -54,7 +54,7 @@ public class MediaRoomController {
 				}
 				txt="";
 			}
-    		}
+    	}
     }
     
     @FXML
@@ -86,7 +86,7 @@ public class MediaRoomController {
     
     public void assignSeat(ActionEvent event)
     {
-    	Stage stage=(Stage) btnCancel.getScene().getWindow();
+    	Stage stage = (Stage) btnCancel.getScene().getWindow();
 		stage.close();
     }
     
