@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import Controller.LoginController;
+import Controller.MainMenuController;
 import Controller.RegisterFilmController;
 import Controller.RegisterViewerController;
 import javafx.application.Application;
@@ -11,6 +13,7 @@ import javafx.stage.Stage;
 import model.Cinema;
 import model.CinemaData;
 import model.TypeOfRoom;
+import model.UsersData;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -21,12 +24,15 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	
 	private static Cinema cinemaObj;
+	private UsersData usersData;
 	
+	
+	private LoginController loginController;
+	private MainMenuController mainController;
 	private RegisterFilmController registerFilmController;
 	private RegisterViewerController registerViewerController;
 	
-	
-	//Creo que esto esta mal
+
 	@FXML
 	private Stage stageMenu;
 	@FXML
@@ -46,22 +52,33 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-
+		usersData = new UsersData();
+		showLogin();
+	}
+	
+	public void showLogin() {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/Login.fxml"));
-			Scene scene = new Scene(root,800,600);
-			scene.getStylesheets().add(getClass().getResource("../ui/application.css").toExternalForm());
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/Login.fxml"));
+			BorderPane root = (BorderPane)loader.load();
 			
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			loginController = loader.getController();
+			loginController.setMain(this);
+			loginController.setUsers(usersData);
+			
+			Scene scene = new Scene(root,704,546);
+			scene.getStylesheets().add(getClass().getResource("../ui/application.css").toExternalForm());
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void exit()
-	{
+
+	public void exit() {
 		System.exit(0);
+		showLogin();
 	}
 	
 	 
@@ -70,6 +87,10 @@ public class Main extends Application {
 	{
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/MainMenu.fxml"));
 		Parent p = (Parent) loader.load();
+		
+		mainController = loader.getController();
+		mainController.setMain(this);
+		
 		stageMenu = new Stage();
 		Scene scene = new Scene(p);
 		stageMenu.setScene(scene);

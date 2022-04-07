@@ -96,7 +96,7 @@ public class RegisterFilmController {
     	}catch(Exception e)
     	{
     		Alert alert=new Alert(AlertType.ERROR);
-    		alert.setContentText("asegurese de ingresar bien los datos");
+    		alert.setContentText("Hay un error en los datos ingresados");
     		alert.show();
     	}
 

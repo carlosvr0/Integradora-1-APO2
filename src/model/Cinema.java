@@ -2,13 +2,13 @@ package model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Cinema {
 	
 	public Cinema() {
 		
 	}
-	
 	
 	public void registerMovie(String name, LocalDate date, LocalTime initTime, LocalTime endTime, TypeOfRoom room) {
 		Movie newMovie = new Movie(name, date, initTime, endTime, room);

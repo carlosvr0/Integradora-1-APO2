@@ -67,7 +67,7 @@ public class RegisterViewerController {
 			String name = viewerName.getText();
 			String id = viewerID.getText();
 			int posicion = moviesTable.getSelectionModel().getSelectedIndex();  
-			main=new Main();
+			
 			if(moviesTable.getSelectionModel().getSelectedItem().getRoom()==TypeOfRoom.MINI_ROOM)
 			{
 				main.showMiniRoomSeats();

@@ -14,21 +14,22 @@ public class MainMenuController {
 	@FXML
 	public void registerFilm(ActionEvent event) throws IOException
 	{
-		main=new Main();
 		main.showRegisterFilm();
-	}
-	
-	@FXML
-	public void logOut(ActionEvent event)
-	{
-		main=new Main();
-		main.exit();
 	}
 	
 	@FXML
 	public void registerViewer(ActionEvent event) throws IOException
 	{
-		main=new Main();
 		main.showRegisterViewer();
+	}
+	
+	@FXML
+	public void logOut(ActionEvent event)
+	{
+		main.exit();
+	}
+	
+	public void setMain(Main main) {
+		this.main = main;
 	}
 }
