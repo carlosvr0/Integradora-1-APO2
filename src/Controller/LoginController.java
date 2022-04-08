@@ -10,12 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import model.UsersData;
 
 public class LoginController {
 	
 	private Main main;
-	private UsersData users;
 	
 	@FXML
 	private Button btnIngresar;
@@ -26,25 +24,22 @@ public class LoginController {
 	public void submit(ActionEvent event) throws IOException, UserNotFoundException {
 		
 		String id = documentTextField.getText();
-		users.addUser();
-		try {
-			users.isTheUserExists(id); 
+		
+		if(main.canAccess(id)) {
 			main.showMainMenu();
 			Stage stage=(Stage) btnIngresar.getScene().getWindow();
 			stage.close();
-		} catch (UserNotFoundException e) {
+		}else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error Dialog");
 			alert.setHeaderText("Usuario no autorizado");
 			alert.setContentText("Debe ingresar un usuario valido");				
 			alert.showAndWait();
+			//throw new UserNotFoundException();
 		}
 	}
 	
 	public void setMain(Main main) {
 		this.main = main;
-	}
-	public void setUsers(UsersData users) {
-		this.users = users;
 	}
 }

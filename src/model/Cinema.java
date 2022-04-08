@@ -1,13 +1,55 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
+
+import exception.UserNotFoundException;
 
 public class Cinema {
 	
+	static String PathPasswords = "docs\\passwords.txt";
+	static List<UsersData> passwords;
+	
+	
 	public Cinema() {
+		passwords = new ArrayList<>();
+	}
+	
+	
+	public void cargarData() throws IOException { 
+		File file = new File(PathPasswords); 
+		FileReader fr = new FileReader(file);
+		BufferedReader input = new BufferedReader(fr);
+		input.readLine();
+
+		while (input.ready()) {
+			String line = input.readLine();
+
+			addPsswrd(line);
+		}
+
+		input.close();
+		fr.close();
+	}
+	
+	public void addPsswrd(String contra) {
+		passwords.add(new UsersData(contra));
+	}
+	
+	public boolean isTheUserExists(String contra) {
 		
+		for(int m = 0; m < passwords.size(); m++) {
+			if(passwords.get(m).getPasswords().equals(contra)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void registerMovie(String name, LocalDate date, LocalTime initTime, LocalTime endTime, TypeOfRoom room) {

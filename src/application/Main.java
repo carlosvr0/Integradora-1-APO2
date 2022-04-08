@@ -8,6 +8,7 @@ import Controller.LoginController;
 import Controller.MainMenuController;
 import Controller.RegisterFilmController;
 import Controller.RegisterViewerController;
+import exception.UserNotFoundException;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.Cinema;
@@ -24,7 +25,6 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	
 	private static Cinema cinemaObj;
-	private UsersData usersData;
 	
 	
 	private LoginController loginController;
@@ -51,9 +51,16 @@ public class Main extends Application {
 	}
 	
 	@Override
-	public void start(Stage primaryStage) {
-		usersData = new UsersData();
+	public void start(Stage primaryStage) throws IOException {
+		
+		cinemaObj.cargarData();
+		
 		showLogin();
+	}
+	
+	
+	public boolean canAccess(String c) throws UserNotFoundException {
+		return cinemaObj.isTheUserExists(c);
 	}
 	
 	public void showLogin() {
@@ -63,7 +70,6 @@ public class Main extends Application {
 			
 			loginController = loader.getController();
 			loginController.setMain(this);
-			loginController.setUsers(usersData);
 			
 			Scene scene = new Scene(root,704,546);
 			scene.getStylesheets().add(getClass().getResource("../ui/application.css").toExternalForm());
