@@ -34,7 +34,7 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
-            <Button layoutX="269.0" layoutY="360.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="263.0" style="-fx-background-color: #AED6F1;" text="Generar Reporte">
+            <Button layoutX="269.0" layoutY="360.0" mnemonicParsing="false" onAction="#makeReport" prefHeight="43.0" prefWidth="263.0" style="-fx-background-color: #AED6F1;" text="Generar Reporte">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>

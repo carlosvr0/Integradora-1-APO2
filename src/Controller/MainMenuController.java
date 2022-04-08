@@ -29,6 +29,11 @@ public class MainMenuController {
 		main.exit();
 	}
 	
+	@FXML
+	public void makeReport(ActionEvent event) throws IOException {
+		main.doReport();
+	}
+	
 	public void setMain(Main main) {
 		this.main = main;
 	}

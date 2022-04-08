@@ -1,19 +1,22 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import exception.UserNotFoundException;
+//import exception.UserNotFoundException;
 
 public class Cinema {
 	
 	static String PathPasswords = "docs\\passwords.txt";
+	static String PathToReport = ".\\files\\reporte.txt";
 	static List<UsersData> passwords;
 	
 	
@@ -89,4 +92,37 @@ public class Cinema {
 		
 		return false;//no hay una pelicula a esa hora
 	}
+	
+	
+	public String writeReport() {
+		String info = "";
+		
+		info += "==================================\n"; 
+		info += "			CINE BIENESTAR			\n";
+		info += "==================================\n";
+		
+		for(int m = 0; m < CinemaData.moviesList.size(); m++) {
+			info += m+1 + ". " + CinemaData.moviesList.get(m).toString() + "\n";
+			
+			for(int n = 0; n < CinemaData.spectatorList.size(); n++) {
+				info += "	" + CinemaData.spectatorList.get(n).toString() + "\n";
+			}
+		}
+		
+		return info;
+	}
+	
+	public void makeReport(String report) throws IOException {
+		File file = new File(PathToReport);
+		FileWriter fw = new FileWriter(file);
+		
+		BufferedWriter output = new BufferedWriter(fw);
+		output.write(report);
+		
+		output.newLine();
+		output.close();
+		fw.close();
+	}
+	
+	
 }

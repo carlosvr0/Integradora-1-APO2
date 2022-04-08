@@ -12,6 +12,10 @@ public class Viewer {
 		this.setMovieName(movieName);
 	}
 
+	@Override
+	public String toString() {
+		return name;
+	}
 	
 	public String getName() {
 		return name;

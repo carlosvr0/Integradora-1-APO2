@@ -44,6 +44,18 @@ public class Movie {
 		}
 	}
 	
+	
+	@Override
+	public String toString() {
+		String message = "";
+		
+		message += name + " - " + date + " - " + room;
+		
+		return message;
+	}
+	
+	
+	
 	public void setSeatCoordinates(int x, int y)
 	{
 		seats[x][y]=true;

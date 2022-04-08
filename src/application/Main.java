@@ -184,10 +184,13 @@ public class Main extends Application {
 		return false;
 	}
 
+	public void doReport() throws IOException {
+		String report = cinemaObj.writeReport();
+		cinemaObj.makeReport(report);
+	}
 	
 	public static void setCinemaObj(Cinema cinemaObj) {
 		Main.cinemaObj = cinemaObj;
 	}
-		
 
 }
